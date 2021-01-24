@@ -17,4 +17,6 @@ public interface Deque<E> {
 	E removeFirst();
 	
 	E removeLast();
+	
+	boolean isFull();
 }

@@ -3,7 +3,7 @@ package myCollections;
 public class ArrayDeque<E> implements Deque<E> {
 	
 	private E[] data;
-	private static final int CAPACITY = 8;
+	private static final int CAPACITY = 6;
 	
 	private int first = 0;
 	private int last = 0;
@@ -88,5 +88,10 @@ public class ArrayDeque<E> implements Deque<E> {
 		size--;
 		
 		return answer;
+	}
+
+	@Override
+	public boolean isFull() {
+		return size == CAPACITY;
 	}
 }

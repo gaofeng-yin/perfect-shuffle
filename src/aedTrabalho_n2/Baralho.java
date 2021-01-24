@@ -8,6 +8,10 @@ public class Baralho {
 
 	public Baralho(){
 		this.conteudo = new ArrayDeque<>();
+		for(int i = 1; !conteudo.isFull(); i++) {
+			conteudo.addFirst(new Carta(Naipe.ESPADAS,i));
+		}
+		
 	}
 
 	public Baralho(int numeroDeCartas){
@@ -18,7 +22,11 @@ public class Baralho {
 	 @return o conteúdo do baralho.
 	 */
 	public ArrayDeque<Carta> getConteudo(){
-		throw new UnsupportedOperationException("Método não implementado!"); 
+		if (conteudo.isEmpty()) {
+	         throw new IllegalStateException("Can't get from an empty deck.");
+	    }
+		return conteudo;
+		//throw new UnsupportedOperationException("Método não implementado!"); 
 	}
 
 	public boolean nextBaralho(){
@@ -28,13 +36,19 @@ public class Baralho {
 	/** Executa o baralho perfeito in-shuffle.
 	 */
 	public void inShuffle(){
-		throw new UnsupportedOperationException("Método não implementado!"); 
+		if (conteudo.size() % 2 != 0) {
+            throw new IllegalArgumentException("size must be even");
+		}
+		//throw new UnsupportedOperationException("Método não implementado!"); 
 	} // fim de inShuffle
 
 	/** Executa o baralho perfeito out-shuffle.
 	 */
 	public void outShuffle(){
-		throw new UnsupportedOperationException("Método não implementado!"); 
+		if (conteudo.size() % 2 != 0) {
+            throw new IllegalArgumentException("size must be even");
+		}
+            //throw new UnsupportedOperationException("Método não implementado!"); 
 	} // fim de outShuffle
 
 	/** Mover a carta de topo do baralho um determinado número de
