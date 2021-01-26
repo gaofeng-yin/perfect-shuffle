@@ -92,6 +92,6 @@ public class ArrayDeque<E> implements Deque<E> {
 
 	@Override
 	public boolean isFull() {
-		return size == CAPACITY;
+		return (size == CAPACITY);
 	}
 }

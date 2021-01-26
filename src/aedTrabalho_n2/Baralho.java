@@ -6,16 +6,14 @@ public class Baralho {
 
 	private ArrayDeque<Carta> conteudo;
 
-	public Baralho(){
-		this.conteudo = new ArrayDeque<>();
-		for(int i = 1; !conteudo.isFull(); i++) {
-			conteudo.addFirst(new Carta(Naipe.ESPADAS,i));
-		}
-		
+	public Baralho(ArrayDeque<Carta> baralho){
+		this.conteudo = baralho;
 	}
 
 	public Baralho(int numeroDeCartas){
-		this.conteudo = new ArrayDeque<>(numeroDeCartas);
+		if(numeroDeCartas % 2 != 0) {
+			throw new IllegalArgumentException("Deck size must be even!"); 
+		}
 	}
 
 	/** Devolve o conteúdo do baralho.
