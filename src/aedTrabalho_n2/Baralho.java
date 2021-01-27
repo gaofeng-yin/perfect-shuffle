@@ -104,6 +104,7 @@ public class Baralho {
 			System.out.print("\nMetade superior: ");
 			Object [] mSuperior = new Object[conteudo.size()/2];
 			for(int n = 0; n<=(conteudo.size()/2)-1; n++) {
+				//here where i will do the change
 				mSuperior[n] = cartas[n];
 				System.out.print(mSuperior[n] + " ");
 			}
@@ -112,6 +113,7 @@ public class Baralho {
 			System.out.print("\nMetade inferior: ");
 			Object [] mInferior = new Object[conteudo.size()/2];
 			for(int n = (conteudo.size()/2); n<=conteudo.size()-1; n++) {
+				//here where i will do the change
 				mInferior[s] = cartas[n];
 				System.out.print(mInferior[s] + " ");
 				s++;
