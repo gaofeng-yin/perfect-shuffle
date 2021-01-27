@@ -1,8 +1,9 @@
 package aedTrabalho_n2;
 
+
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.Stack;
+
 
 import myCollections.ArrayDeque;
 
@@ -94,8 +95,8 @@ public class Baralho {
 		cartasClone = cartas.clone();
 		Object [] shuffled = new Object[conteudo.size()];
 		shuffled = cartas.clone();
-		//do {
-			System.out.println("--embaralhar #" + (embNum++) + "--");
+		do {
+			System.out.println("\n--embaralhar #" + (embNum++) + "--");
 			System.out.println("IN-SHUFFLE");
 			System.out.print("Baralho original: ");
 			for(int g = 0; g < shuffled.length; g++) {
@@ -105,7 +106,7 @@ public class Baralho {
 			Object [] mSuperior = new Object[conteudo.size()/2];
 			for(int n = 0; n<=(conteudo.size()/2)-1; n++) {
 				//here where i will do the change
-				mSuperior[n] = cartas[n];
+				mSuperior[n] = shuffled[n];
 				System.out.print(mSuperior[n] + " ");
 			}
 			
@@ -114,12 +115,15 @@ public class Baralho {
 			Object [] mInferior = new Object[conteudo.size()/2];
 			for(int n = (conteudo.size()/2); n<=conteudo.size()-1; n++) {
 				//here where i will do the change
-				mInferior[s] = cartas[n];
+				mInferior[s] = shuffled[n];
 				System.out.print(mInferior[s] + " ");
 				s++;
 			}
 			System.out.print("\nBaralhado: ");
-			Stack<Object> st = new Stack<Object>();
+			//remove clean
+			while(!shuffle.isEmpty()) {
+				shuffle.removeLast();
+			}
 			int o = 0;
 			while(o != mInferior.length) {
 				shuffle.addLast(mInferior[o]);
@@ -140,7 +144,10 @@ public class Baralho {
 				t++;
 			}
 			countShuffle++;
-		//}while(Arrays.deepEquals(cartasClone, cartas));
+			System.out.println();
+		}while(!Arrays.deepEquals(cartasClone, shuffled));
+		
+		System.out.println("\nFoi necessario " + countShuffle + " in-shuffles para voltar as " + conteudo.size() + " cartas do baralho original!");
 		
 	} // fim de inShuffle
 
