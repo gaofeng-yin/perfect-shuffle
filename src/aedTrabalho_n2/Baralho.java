@@ -74,30 +74,34 @@ public class Baralho {
 		Object [] shuffled = new Object[conteudo.size()];
 		shuffled = cartas.clone();
 		do {
-			System.out.println("\n--embaralhar #" + (embNum++) + "--");
+			System.out.println();
+			System.out.println("--embaralhar #" + (embNum++) + "--");
 			System.out.println("IN-SHUFFLE");
-			System.out.print("Baralho original: ");
+			System.out.print("Baralho original:");
 			for(int g = 0; g < shuffled.length; g++) {
-				System.out.print(shuffled[g] + " ");
+				System.out.print(" " + shuffled[g]);
 			}
-			System.out.print("\nMetade superior: ");
+			System.out.println();
+			System.out.print("Metade superior:");
 			Object [] mSuperior = new Object[conteudo.size()/2];
 			for(int n = 0; n<=(conteudo.size()/2)-1; n++) {
 				//here where i will do the change
 				mSuperior[n] = shuffled[n];
-				System.out.print(mSuperior[n] + " ");
+				System.out.print(" " + mSuperior[n]);
 			}
 			
 			int s = 0;
-			System.out.print("\nMetade inferior: ");
+			System.out.println();
+			System.out.print("Metade inferior:");
 			Object [] mInferior = new Object[conteudo.size()/2];
 			for(int n = (conteudo.size()/2); n<=conteudo.size()-1; n++) {
 				//here where i will do the change
 				mInferior[s] = shuffled[n];
-				System.out.print(mInferior[s] + " ");
+				System.out.print(" " + mInferior[s]);
 				s++;
 			}
-			System.out.print("\nBaralhado: ");
+			System.out.println();
+			System.out.print("Baralhado:");
 			//remove clean
 			while(!shuffle.isEmpty()) {
 				shuffle.removeLast();
@@ -118,14 +122,15 @@ public class Baralho {
 			}
 			int t = 0;
 			while(t < shuffled.length) {
-				System.out.print(shuffled[t]);
+				System.out.print(" " + shuffled[t]);
 				t++;
 			}
 			countShuffle++;
 			System.out.println();
 		}while(!Arrays.deepEquals(cartasClone, shuffled));
 		
-		System.out.println("\nFoi necessario " + countShuffle + " in-shuffles para voltar as " + conteudo.size() + " cartas do baralho original!");
+		System.out.println();
+		System.out.println("Foi necessario " + countShuffle + " in-shuffles para voltar as " + conteudo.size() + " cartas do baralho original!");
 		
 	} // fim de inShuffle
 
@@ -157,22 +162,25 @@ public class Baralho {
 		Object [] shuffled = new Object[conteudo.size()];
 		shuffled = cartas.clone();
 		do {
-			System.out.println("\n--embaralhar #" + (embNum++) + "--");
-			System.out.println("IN-SHUFFLE");
-			System.out.print("Baralho original: ");
+			System.out.println();
+			System.out.println("--embaralhar #" + (embNum++) + "--");
+			System.out.println("OUT-SHUFFLE");
+			System.out.print("Baralho original:");
 			for(int g = 0; g < shuffled.length; g++) {
-				System.out.print(shuffled[g] + " ");
+				System.out.print(" " + shuffled[g]);
 			}
-			System.out.print("\nMetade superior: ");
+			System.out.println();
+			System.out.print("Metade superior:");
 			Object [] mSuperior = new Object[conteudo.size()/2];
 			for(int n = 0; n<=(conteudo.size()/2)-1; n++) {
 				//here where i will do the change
 				mSuperior[n] = shuffled[n];
-				System.out.print(mSuperior[n] + " ");
+				System.out.print(" " + mSuperior[n]);
 			}
 			
 			int s = 0;
-			System.out.print("\nMetade inferior: ");
+			System.out.println();
+			System.out.print("Metade inferior: ");
 			Object [] mInferior = new Object[conteudo.size()/2];
 			for(int n = (conteudo.size()/2); n<=conteudo.size()-1; n++) {
 				//here where i will do the change
@@ -180,7 +188,8 @@ public class Baralho {
 				System.out.print(mInferior[s] + " ");
 				s++;
 			}
-			System.out.print("\nBaralhado: ");
+			System.out.println();
+			System.out.print("Baralhado:");
 			//remove clean
 			while(!shuffle.isEmpty()) {
 				shuffle.removeLast();
@@ -201,14 +210,15 @@ public class Baralho {
 			}
 			int t = 0;
 			while(t < shuffled.length) {
-				System.out.print(shuffled[t]);
+				System.out.print(" " + shuffled[t]);
 				t++;
 			}
 			countShuffle++;
 			System.out.println();
 		}while(!Arrays.deepEquals(cartasClone, shuffled));
 		
-		System.out.println("\nFoi necessario " + countShuffle + " out-shuffles para voltar as " + conteudo.size() + " cartas do baralho original!");
+		System.out.println();
+		System.out.println("Foi necessario " + countShuffle + " out-shuffles para voltar as " + conteudo.size() + " cartas do baralho original!");
 	} // fim de outShuffle
 
 	/** Mover a carta de topo do baralho um determinado número de
