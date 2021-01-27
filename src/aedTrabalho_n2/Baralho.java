@@ -3,10 +3,9 @@ package aedTrabalho_n2;
 
 import java.util.Arrays;
 import java.util.Iterator;
-import myCollections.ArrayDeque;
-
 
 import myCollections.ArrayDeque;
+
 
 public class Baralho {
 
@@ -16,7 +15,7 @@ public class Baralho {
 		this.conteudo = new ArrayDeque<Carta>();
 		int i = 1;
 		while(!conteudo.isFull()) {
-			conteudo.addFirst(new Carta(Naipe.ESPADAS, i));
+			conteudo.addLast(new Carta(Naipe.ESPADAS, i));
 			i++;
 		}
 	}
@@ -26,10 +25,10 @@ public class Baralho {
 			throw new IllegalArgumentException("Deck size must be even!"); 
 		}
 		this.conteudo = new ArrayDeque<Carta>(numeroDeCartas);
-		int i = numeroDeCartas;
+		int i = 1;
 		while(!conteudo.isFull()) {
-			conteudo.addFirst(new Carta(Naipe.COPAS, i));
-			i--;
+			conteudo.addLast(new Carta(Naipe.ESPADAS, i));
+			i++;
 		}
 	}
 
@@ -210,7 +209,6 @@ public class Baralho {
 		}while(!Arrays.deepEquals(cartasClone, shuffled));
 		
 		System.out.println("\nFoi necessario " + countShuffle + " out-shuffles para voltar as " + conteudo.size() + " cartas do baralho original!");
-            //throw new UnsupportedOperationException("Método não implementado!"); 
 	} // fim de outShuffle
 
 	/** Mover a carta de topo do baralho um determinado número de
