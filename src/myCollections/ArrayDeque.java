@@ -15,9 +15,9 @@ public class ArrayDeque<E> implements Deque<E> {
 	public ArrayDeque() {
 		this(CAPACITY);
 	}
-	
+
 	public ArrayDeque(int capacity){
-		if (capacity <= 0 ){
+		if (capacity <= 0){
 			throw new IllegalArgumentException("Invalid Capacity!");
 		}
 		data = (E[]) new Object[capacity];

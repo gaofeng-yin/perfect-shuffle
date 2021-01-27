@@ -1,18 +1,31 @@
 package aedTrabalho_n2;
 
+import java.util.Iterator;
+
 import myCollections.ArrayDeque;
 
 public class Baralho {
 
 	private ArrayDeque<Carta> conteudo;
 
-	public Baralho(ArrayDeque<Carta> baralho){
-		this.conteudo = baralho;
+	public Baralho(){
+		this.conteudo = new ArrayDeque<Carta>();
+		int i = 1;
+		while(!conteudo.isFull()) {
+			conteudo.addFirst(new Carta(Naipe.ESPADAS, i));
+			i++;
+		}
 	}
-
+	
 	public Baralho(int numeroDeCartas){
 		if(numeroDeCartas % 2 != 0) {
 			throw new IllegalArgumentException("Deck size must be even!"); 
+		}
+		this.conteudo = new ArrayDeque<Carta>(numeroDeCartas);
+		int i = numeroDeCartas;
+		while(!conteudo.isFull()) {
+			conteudo.addFirst(new Carta(Naipe.OUROS, i));
+			i--;
 		}
 	}
 
@@ -24,7 +37,6 @@ public class Baralho {
 	         throw new IllegalStateException("Can't get from an empty deck.");
 	    }
 		return conteudo;
-		//throw new UnsupportedOperationException("Método não implementado!"); 
 	}
 
 	public boolean nextBaralho(){
@@ -33,11 +45,31 @@ public class Baralho {
 
 	/** Executa o baralho perfeito in-shuffle.
 	 */
+	
+	public void carta() {
+		Iterator it = this.conteudo.iterator();
+		Object [] arr = null;
+		
+		while(it.hasNext()) {
+			Object val =it.next();
+			System.out.println(val);
+		}
+	}
+	
 	public void inShuffle(){
 		if (conteudo.size() % 2 != 0) {
             throw new IllegalArgumentException("size must be even");
 		}
-		//throw new UnsupportedOperationException("Método não implementado!"); 
+		
+		Iterator it = this.conteudo.iterator();
+		Object [] arr = null;
+		int i = 0;
+		
+		while(it.hasNext()) {
+			arr[i]= it.next();
+			i++;
+		}
+		
 	} // fim de inShuffle
 
 	/** Executa o baralho perfeito out-shuffle.
