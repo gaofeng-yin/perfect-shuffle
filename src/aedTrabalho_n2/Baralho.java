@@ -77,12 +77,12 @@ public class Baralho {
 			System.out.println();
 			System.out.println("--embaralhar #" + (embNum++) + "--");
 			System.out.println("IN-SHUFFLE");
-			System.out.print("Baralho original:");
+			System.out.print("Baralho Original:");
 			for(int g = 0; g < shuffled.length; g++) {
 				System.out.print(" " + shuffled[g]);
 			}
 			System.out.println();
-			System.out.print("Metade superior:");
+			System.out.print("Metade Superior:");
 			Object [] mSuperior = new Object[conteudo.size()/2];
 			for(int n = 0; n<=(conteudo.size()/2)-1; n++) {
 				//here where i will do the change
@@ -92,7 +92,7 @@ public class Baralho {
 			
 			int s = 0;
 			System.out.println();
-			System.out.print("Metade inferior:");
+			System.out.print("Metade Inferior:");
 			Object [] mInferior = new Object[conteudo.size()/2];
 			for(int n = (conteudo.size()/2); n<=conteudo.size()-1; n++) {
 				//here where i will do the change
@@ -165,12 +165,12 @@ public class Baralho {
 			System.out.println();
 			System.out.println("--embaralhar #" + (embNum++) + "--");
 			System.out.println("OUT-SHUFFLE");
-			System.out.print("Baralho original:");
+			System.out.print("Baralho Original:");
 			for(int g = 0; g < shuffled.length; g++) {
 				System.out.print(" " + shuffled[g]);
 			}
 			System.out.println();
-			System.out.print("Metade superior:");
+			System.out.print("Metade Superior:");
 			Object [] mSuperior = new Object[conteudo.size()/2];
 			for(int n = 0; n<=(conteudo.size()/2)-1; n++) {
 				//here where i will do the change
@@ -180,7 +180,7 @@ public class Baralho {
 			
 			int s = 0;
 			System.out.println();
-			System.out.print("Metade inferior: ");
+			System.out.print("Metade Inferior: ");
 			Object [] mInferior = new Object[conteudo.size()/2];
 			for(int n = (conteudo.size()/2); n<=conteudo.size()-1; n++) {
 				//here where i will do the change
