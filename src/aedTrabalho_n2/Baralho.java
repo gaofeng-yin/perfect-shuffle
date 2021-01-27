@@ -3,6 +3,7 @@ package aedTrabalho_n2;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import myCollections.ArrayDeque;
 
 
 import myCollections.ArrayDeque;
@@ -47,29 +48,7 @@ public class Baralho {
 	}
 
 	/** Executa o baralho perfeito in-shuffle.
-	 */
-	
-	public void carta() {
-		Iterator it = this.conteudo.iterator();
-		Object [] arr = new Object[conteudo.size()];
-		Object [] clo = null;
-		/*
-		while(it.hasNext()) {
-			Object val =it.next();
-			System.out.println(val);
-		}*/
-		int i = 0;
-		while(it.hasNext()) {
-			arr[i] = it.next();
-			i++;
-		}
-		clo = arr.clone();
-		for(int j = 0; j < clo.length; j++) {
-			System.out.println(clo[j]);
-		}
-		
-	}
-	
+	 */	
 	public void inShuffle(){
 		if (conteudo.size() % 2 != 0) {
             throw new IllegalArgumentException("size must be even");
