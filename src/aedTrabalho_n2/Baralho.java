@@ -157,6 +157,80 @@ public class Baralho {
 		if (conteudo.size() % 2 != 0) {
             throw new IllegalArgumentException("size must be even");
 		}
+		//Shuffled cards
+		ArrayDeque<Object> shuffle = new ArrayDeque<Object>();
+		//count number of shuffle
+		int countShuffle = 0;
+		int embNum = 1;
+		//conteudo iterator
+		Iterator it = this.conteudo.iterator();
+		//object array for cartas to store conteudo
+		Object [] cartas = new Object[conteudo.size()];
+		//to clone cartas, for verification after shuffle
+		Object [] cartasClone = null;
+		int i = 0;
+		//conteudo to array
+		while(it.hasNext()) {
+			cartas[i]= it.next();
+			i++;
+		}
+		//cartas clone
+		cartasClone = cartas.clone();
+		Object [] shuffled = new Object[conteudo.size()];
+		shuffled = cartas.clone();
+		do {
+			System.out.println("\n--embaralhar #" + (embNum++) + "--");
+			System.out.println("IN-SHUFFLE");
+			System.out.print("Baralho original: ");
+			for(int g = 0; g < shuffled.length; g++) {
+				System.out.print(shuffled[g] + " ");
+			}
+			System.out.print("\nMetade superior: ");
+			Object [] mSuperior = new Object[conteudo.size()/2];
+			for(int n = 0; n<=(conteudo.size()/2)-1; n++) {
+				//here where i will do the change
+				mSuperior[n] = shuffled[n];
+				System.out.print(mSuperior[n] + " ");
+			}
+			
+			int s = 0;
+			System.out.print("\nMetade inferior: ");
+			Object [] mInferior = new Object[conteudo.size()/2];
+			for(int n = (conteudo.size()/2); n<=conteudo.size()-1; n++) {
+				//here where i will do the change
+				mInferior[s] = shuffled[n];
+				System.out.print(mInferior[s] + " ");
+				s++;
+			}
+			System.out.print("\nBaralhado: ");
+			//remove clean
+			while(!shuffle.isEmpty()) {
+				shuffle.removeLast();
+			}
+			int o = 0;
+			while(o != mSuperior.length) {
+				shuffle.addLast(mSuperior[o]);
+				shuffle.addLast(mInferior[o]);
+				o++;
+			}
+			
+			Iterator ar = shuffle.iterator();
+			int q = 0;
+
+			while(ar.hasNext()) {
+				shuffled[q]= ar.next();
+				q++;
+			}
+			int t = 0;
+			while(t < shuffled.length) {
+				System.out.print(shuffled[t]);
+				t++;
+			}
+			countShuffle++;
+			System.out.println();
+		}while(!Arrays.deepEquals(cartasClone, shuffled));
+		
+		System.out.println("\nFoi necessario " + countShuffle + " out-shuffles para voltar as " + conteudo.size() + " cartas do baralho original!");
             //throw new UnsupportedOperationException("Método não implementado!"); 
 	} // fim de outShuffle
 
