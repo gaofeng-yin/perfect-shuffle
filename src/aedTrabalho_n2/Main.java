@@ -9,7 +9,7 @@ public class Main {
 		
 		Baralho bar = new Baralho(6);
 		
-		bar.carta();
+		bar.inShuffle();
 	}
 
 }
