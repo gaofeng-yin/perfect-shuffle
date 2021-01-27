@@ -122,8 +122,8 @@ public class Baralho {
 			Stack<Object> st = new Stack<Object>();
 			int o = 0;
 			while(o != mInferior.length) {
-				shuffle.addFirst(mInferior[o]);
-				shuffle.addFirst(mSuperior[o]);
+				shuffle.addLast(mInferior[o]);
+				shuffle.addLast(mSuperior[o]);
 				o++;
 			}
 			
@@ -134,10 +134,10 @@ public class Baralho {
 				shuffled[q]= ar.next();
 				q++;
 			}
-			int t = shuffled.length-1;
-			while(t >= 0) {
+			int t = 0;
+			while(t < shuffled.length) {
 				System.out.print(shuffled[t]);
-				t--;
+				t++;
 			}
 			countShuffle++;
 		//}while(Arrays.deepEquals(cartasClone, cartas));
