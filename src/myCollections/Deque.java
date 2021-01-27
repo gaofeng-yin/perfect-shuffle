@@ -1,5 +1,7 @@
 package myCollections;
 
+import java.util.Iterator;
+
 public interface Deque<E> {
 	
 	int size();
@@ -19,4 +21,6 @@ public interface Deque<E> {
 	E removeLast();
 	
 	boolean isFull();
+
+	Iterator<E> iterator();
 }

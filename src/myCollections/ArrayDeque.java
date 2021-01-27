@@ -1,5 +1,7 @@
 package myCollections;
 
+import java.util.Iterator;
+
 public class ArrayDeque<E> implements Deque<E> {
 	
 	private E[] data;
@@ -20,6 +22,42 @@ public class ArrayDeque<E> implements Deque<E> {
 		}
 		data = (E[]) new Object[capacity];
 	}
+	
+	//class iterator
+	@Override
+    public Iterator<E> iterator(){
+        return new ArrayIterator();
+    }    
+    
+	private class ArrayIterator implements Iterator<E>{
+		private int j;
+		public ArrayIterator() {
+			if(size == 0) {
+				j = -1;
+			}else {
+				j = first;
+			}
+		}
+	   
+		@Override
+		public boolean hasNext() {
+			return (j != -1);
+		}
+		@Override
+		public E next() {
+			if(j == -1) {
+				throw new IllegalStateException("No next element!");
+			}
+			int j_actual = j;
+			j=(j+1)%data.length;
+			if(j==(first + size)%data.length) {
+				j = -1;
+			}
+			return data[j_actual];
+		}
+		
+	}
+	//end of class iterator
 
 	@Override
 	public int size() {
@@ -94,4 +132,5 @@ public class ArrayDeque<E> implements Deque<E> {
 	public boolean isFull() {
 		return (size == CAPACITY);
 	}
+
 }
