@@ -1,39 +1,33 @@
-package aedTrabalho_n2;
+package main;
 
 public class Carta {
 
-	private Naipe naipe; // naipe da carta
-	private int valor = 0; // o valor da carta
+	private Naipe naipe;
+	private int valor = 0;
 
 	public Carta(Naipe n, int v){
 		setNaipe(n);
 		setValor(v);
-	} // fim de construtor
+	}
 
-	// Definir o naipe da carta.
 	private void setNaipe(Naipe oNaipe){
 		naipe = oNaipe; }
 
-	/** Devolve o naipe da carta como uma constante do enumerador Naipe.
-	 @return O naipe da carta. */
 	public Naipe getNaipe(){
 		return naipe; 
 		}
 	
-	// Define o valor / número da carta.
 	private void setValor (int oValor){
 		valor = oValor; 
 		}
 
-	/** Devolve o valor da carta como inteiro.
-	 @return o valor da carta. */
 	public int getValor(){
 		return valor; 
 		}
 	
 	@Override
 	public String toString(){
-		char naipeCar = ' '; // Versão com caracter para o naipe
+		char naipeCar = ' ';
 
 		switch (naipe) {
 		case ESPADAS:
@@ -48,7 +42,7 @@ public class Carta {
 		case OUROS:
 			naipeCar = 'O';
 			break;
-		} // end switch
+		}
 
 		String valorString = "" + valor;
 

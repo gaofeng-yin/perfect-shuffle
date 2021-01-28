@@ -1,4 +1,4 @@
-package myCollections;
+package dataCollection;
 
 import java.util.Iterator;
 

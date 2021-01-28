@@ -1,6 +1,6 @@
-package aedTrabalho_n2;
+package main;
 
-import myCollections.ArrayDeque;
+import dataCollection.ArrayDeque;
 
 public class Main {
 
